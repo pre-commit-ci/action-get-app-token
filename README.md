@@ -8,7 +8,7 @@ a github action to retrieve an application token
 ### example usage
 
 ```yaml
-    - uses: pre-commit-ci/action-get-app-token@v0.0.0
+    - uses: pre-commit-ci/action-get-app-token@v1.0.0
       id: app-token
       with:
         app: ${{ secrets.APP_ID }}

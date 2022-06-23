@@ -1,0 +1,16 @@
+name: action-get-app-token
+description: a github action to retrieve an application token
+inputs:
+  app:
+    description: application id
+    required: true
+  pkey64:
+    description: app private key, base64 encoded
+    required: true
+outputs:
+  token:
+    description: app token
+runs:
+  using: node16
+  main: main.mjs
+  post: main.mjs

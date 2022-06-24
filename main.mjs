@@ -7,7 +7,7 @@ function b64(s) {
   return ret.replace(/[/+]/g, (c) => safe[c]).replace(/=+$/, '');
 }
 
-export function jwt(pkey64, app) {
+function jwt(pkey64, app) {
   const payload = {
     iat: Math.floor(+new Date() / 1000),
     exp: Math.floor(+new Date() / 1000) + 500,
@@ -24,7 +24,7 @@ export function jwt(pkey64, app) {
   return `${clear}.${signature}`;
 }
 
-export async function req(meth, path, headers) {
+async function req(meth, path, headers) {
   const opts = {
     hostname: 'api.github.com',
     port: 443,

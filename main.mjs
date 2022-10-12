@@ -1,4 +1,5 @@
 import crypto from 'crypto';
+import fs from 'fs';
 import https from 'https';
 
 function b64(s) {
@@ -68,8 +69,8 @@ async function createToken(app, pkey, owner) {
 
   console.log('token acquired!');
   console.log(`::add-mask::${token}`);
-  console.log(`::set-output name=token::${token}`);
-  console.log(`::save-state name=token::${token}`);
+  fs.appendFileSync(process.env.GITHUB_OUTPUT, `token=${token}\n`);
+  fs.appendFileSync(process.env.GITHUB_STATE, `token=${token}\n`);
 }
 
 async function delToken(token) {

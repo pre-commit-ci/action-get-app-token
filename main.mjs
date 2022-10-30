@@ -11,7 +11,7 @@ function b64(s) {
 function jwt(pkey64, app) {
   const payload = {
     iat: Math.floor(+new Date() / 1000),
-    exp: Math.floor(+new Date() / 1000) + 500,
+    exp: Math.floor(+new Date() / 1000) + 300,
     iss: app,
   };
 

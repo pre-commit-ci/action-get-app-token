@@ -11,7 +11,7 @@ function b64(s) {
 function jwt(pkey64, app) {
   const payload = {
     iat: Math.floor(+new Date() / 1000),
-    exp: Math.floor(+new Date() / 1000) + 500,
+    exp: Math.floor(+new Date() / 1000) + 300,
     iss: app,
   };
 
@@ -81,8 +81,10 @@ async function delToken(token) {
 
 async function main() {
   if (process.env.STATE_token) {
+    console.log('butts');
     await delToken(process.env.STATE_token);
   } else {
+    console.log('not butts');
     await createToken(
       process.env.INPUT_APP,
       process.env.INPUT_PKEY64,

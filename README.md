@@ -1,3 +1,9 @@
+# DEPRECATED
+
+it probably still works, but I no longer need it now that there are reusable private workflows / actions
+
+___
+
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/pre-commit-ci/action-get-app-token/main.svg)](https://results.pre-commit.ci/latest/github/pre-commit-ci/action-get-app-token/main)
 
 action-get-app-token
